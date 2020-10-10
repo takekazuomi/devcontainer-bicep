@@ -24,8 +24,10 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "source /usr/local/shar
 COPY library-scripts/*.sh /tmp/library-scripts/
 COPY more-tools.sh /tmp/
 
+## quick hack keep vsix in /tmp. https://stackoverflow.com/a/56055647/910906
 RUN apt-get update -yq \
 && bash /tmp/library-scripts/azcli-debian.sh \
 && bash /tmp/library-scripts/powershell-debian.sh \
 && bash /tmp/more-tools.sh \
-&& rm -rf /tmp/*
+&& rm -rf /tmp/* \
+&& curl -Lo vscode-bicep.vsix https://github.com/Azure/bicep/releases/latest/download/vscode-bicep.vsix
