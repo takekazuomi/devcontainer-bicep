@@ -1,4 +1,4 @@
-TAG = 0.0.1
+TAG ?= 0.0.2
 
 help:       ## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
