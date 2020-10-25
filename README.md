@@ -1,4 +1,4 @@
-# Bicep dev container template
+# Bicep dev container
 
 ## Summary
 
@@ -8,11 +8,28 @@
 |----------|-------|
 | *Contributors* | Takekazu Omi |
 | *Definition type* | Dockerfile |
-| *Works in Codespaces* | ? |
+| *Works in Codespaces* | Yes |
 | *Container host OS support* | Linux, macOS, Windows |
 | *Languages, platforms* | Azure |
 
-## Installed binaris
+## Using this definition with an existing folder
+
+About bicep, you can get information from [bicep](https://github.com/Azure/bicep).
+
+This definition requires an Azure subscription to use. You can create a [free account here](https://azure.microsoft.com/en-us/free/). Once you have an Azure account, follow these steps:
+
+1. If this is your first time using a development container, please follow the [getting started steps](https://aka.ms/vscode-remote/containers/getting-started) to set up your machine.
+
+2. To use latest-and-greatest copy of this definition from the repository:
+   1. Clone this repository.
+   2. Copy the contents of `containers/azure-cli/.devcontainer` to the root of your project folder.
+   3. Start VS Code and open your project folder.
+
+3. After following step 2, the contents of the `.devcontainer` folder in your project can be adapted to meet your needs.
+
+4. Finally, press <kbd>F1</kbd> and run **Remote-Containers: Reopen Folder in Container** to start using the definition.
+
+## Installed binaries
 
 - bicep
 - powershell
