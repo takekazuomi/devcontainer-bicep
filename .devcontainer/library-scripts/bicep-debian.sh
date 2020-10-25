@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------------------------------------------
+# Copyright (c) Takekazu Omi. All rights reserved.
+# Licensed under the MIT License. See https://opensource.org/licenses/mit-license.php for license information.
+#-------------------------------------------------------------------------------------------------------------
+# The major design pattern of this plugin was abstracted from Microsoft Corporation, which is subject to the same license.
+# Here is the original copyright notice for Microsoft Corporation:
+#
+#-------------------------------------------------------------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
 #-------------------------------------------------------------------------------------------------------------
-#
-# Docs: https://github.com/microsoft/vscode-dev-containers/blob/master/script-library/docs/powershell.md
-#
-# Syntax: ./powershell-debian.sh
 
 set -e
 
