@@ -1,0 +1,19 @@
+IMAGE_NAME	?= takekazuomi/devcontainers-bicep
+TAG		?= 0.0.4
+
+help:	## Show this help.
+	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
+
+build:	## build
+	docker build \
+		-t $(IMAGE_NAME):$(TAG) \
+		-t $(IMAGE_NAME):latest \
+		-f base.Dockerfile \
+		.
+
+push:	## push
+	docker push $(IMAGE_NAME):$(TAG)
+	docker push $(IMAGE_NAME):latest
+
+login:	## login docker shell
+	docker run -it --rm -u=$$(id -u):$$(id -g) -v $(PWD):/workspace $(IMAGE_NAME):latest /bin/zsh
