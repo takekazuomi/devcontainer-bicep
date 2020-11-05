@@ -48,6 +48,11 @@ This definition requires an Azure subscription to use. You can create a [free ac
 - editorconfig.editorconfig
 - vscode-bicep.vsix
 
+## ChangeLog
+
+- v0.0.5 bicep v0.1.226-alpha
+- v0.0.4 bicep v0.1.37-alpha
+
 ## License
 
 Copyright (c) Takekazu Omi. All rights reserved.
