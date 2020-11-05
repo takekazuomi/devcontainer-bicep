@@ -1,5 +1,5 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-TAG		?= 0.0.4
+TAG		?= 0.0.5
 
 help:	## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
