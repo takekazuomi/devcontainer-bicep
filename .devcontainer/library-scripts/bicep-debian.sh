@@ -11,6 +11,8 @@
 # Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
 #-------------------------------------------------------------------------------------------------------------
 
+BICEP_RELEASE=${1:-"latest"}
+
 set -e
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -41,12 +43,13 @@ shellcheck --version
 # Install the Bicep CLI
 # https://github.com/Azure/bicep/blob/master/docs/installing.md#install-the-bicep-cli
 
-curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+# curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+curl -Lo bicep https://github.com/Azure/bicep/releases/download/${BICEP_RELEASE}/bicep-linux-x64
 chmod +x ./bicep
 mv ./bicep /usr/local/bin/bicep
 bicep --help
 
 # Fetch the latest Bicep VSCode extension
-curl -Lo vscode-bicep.vsix https://github.com/Azure/bicep/releases/latest/download/vscode-bicep.vsix
+curl -Lo /tmp/vscode-bicep.vsix https://github.com/Azure/bicep/releases/download/${BICEP_RELEASE}/vscode-bicep.vsix
 
 echo "Done!"

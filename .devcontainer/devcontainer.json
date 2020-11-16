@@ -22,9 +22,10 @@
 		"dandric.vscode-jq",
 		"redhat.vscode-yaml",
 		"dotjoshjohnson.xml",
-		"timonwong.shellcheck",
-		"editorconfig.editorconfig",
+    "timonwong.shellcheck",
+    "editorconfig.editorconfig",
 		"/tmp/vscode-bicep.vsix"
+//		"ms-azuretools.vscode-bicep"
 	],
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
