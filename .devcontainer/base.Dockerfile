@@ -12,6 +12,10 @@ ARG UPGRADE_PACKAGES="true"
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
+
+# bicep release tags
+ARG BICEP_RELEASE=latest
+
 COPY library-scripts/*.sh /tmp/library-scripts/
 RUN bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
     # Install the Azure CLI
@@ -19,6 +23,6 @@ RUN bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "$
     # Install the powershell
     && bash /tmp/library-scripts/powershell-debian.sh \
     # Install the bicep
-    && bash /tmp/library-scripts/bicep-debian.sh \
+    && bash /tmp/library-scripts/bicep-debian.sh "${BICEP_RELEASE}" \
     # Clean up
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
