@@ -31,7 +31,7 @@ if ! dpkg -s apt-transport-https curl ca-certificates lsb-release > /dev/null 2>
 fi
 
 apt-get update -yq
-apt-get install -yq xz-utils
+apt-get install -yq xz-utils make
 
 # install shellcheck
 # https://github.com/koalaman/shellcheck#installing-a-pre-compiled-binary

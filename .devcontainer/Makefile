@@ -1,5 +1,5 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-TAG		?= 0.0.6
+TAG		?= 0.0.7
 BICEP_RELEASE	= v0.2.14
 
 help:	## Show this help.
