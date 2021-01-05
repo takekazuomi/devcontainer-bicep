@@ -50,6 +50,7 @@ This definition requires an Azure subscription to use. You can create a [free ac
 
 ## ChangeLog
 
+- v0.0.9 bicep v0.2.212  conditional resources support
 - v0.0.7 install GNU make
 - v0.0.6 bicep v0.2.14 module support
 - v0.0.5 bicep v0.1.226
