@@ -8,7 +8,6 @@
 		}
 	},
 	"runArgs": [],
-
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/zsh"
@@ -22,10 +21,10 @@
 		"dandric.vscode-jq",
 		"redhat.vscode-yaml",
 		"dotjoshjohnson.xml",
-    "timonwong.shellcheck",
-    "editorconfig.editorconfig",
-		"/tmp/vscode-bicep.vsix"
-//		"ms-azuretools.vscode-bicep"
+		"timonwong.shellcheck",
+		"editorconfig.editorconfig",
+		//"/tmp/vscode-bicep.vsix"
+		"ms-azuretools.vscode-bicep"
 	],
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
