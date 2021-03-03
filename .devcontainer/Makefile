@@ -1,6 +1,6 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-TAG		?= 0.0.9
-BICEP_RELEASE	= v0.2.212
+TAG		?= 0.3.1
+BICEP_RELEASE	= v0.3.1
 
 help:	## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
