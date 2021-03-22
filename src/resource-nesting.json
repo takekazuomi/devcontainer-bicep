@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "functions": [],
+  "resources": [
+    {
+      "type": "My.Rp/parentType/childType",
+      "apiVersion": "2020-01-01",
+      "name": "[format('{0}/{1}', 'myParent', 'myChild')]",
+      "properties": {
+        "displayName": "[format('child in {0}', reference(resourceId('My.Rp/parentType', 'myParent'), '2020-01-01', 'full').location)]"
+      },
+      "dependsOn": [
+        "[resourceId('My.Rp/parentType', 'myParent')]"
+      ]
+    },
+    {
+      "type": "My.Rp/parentType",
+      "apiVersion": "2020-01-01",
+      "name": "myParent",
+      "location": "West US"
+    }
+  ],
+  "outputs": {
+    "childProp": {
+      "type": "string",
+      "value": "[reference(resourceId('My.Rp/parentType/childType', 'myParent', 'myChild')).displayName]"
+    }
+  },
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.3.126.58533",
+      "templateHash": "13471392052954043995"
+    }
+  }
+}

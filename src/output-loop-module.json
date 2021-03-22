@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "functions": [],
+  "variables": {
+    "nsgNames": [
+      "nsg1",
+      "nsg2",
+      "nsg3"
+    ]
+  },
+  "resources": [
+    {
+      "copy": {
+        "name": "nsg",
+        "count": "[length(variables('nsgNames'))]"
+      },
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "[variables('nsgNames')[copyIndex()]]",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "name": {
+            "value": "[variables('nsgNames')[copyIndex()]]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "functions": [],
+          "resources": [
+            {
+              "type": "Microsoft.Network/networkSecurityGroups",
+              "apiVersion": "2020-06-01",
+              "name": "[parameters('name')]",
+              "location": "[resourceGroup().location]"
+            }
+          ],
+          "outputs": {
+            "n": {
+              "type": "object",
+              "value": {
+                "name": "[parameters('name')]",
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('name'))]"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "nsgs": {
+      "type": "array",
+      "copy": {
+        "count": "[length(range(0, length(variables('nsgNames'))))]",
+        "input": {
+          "name": "[reference(resourceId('Microsoft.Resources/deployments', variables('nsgNames')[range(0, length(variables('nsgNames')))[copyIndex()]]), '2019-10-01').outputs.name]",
+          "resourceId": "[reference(resourceId('Microsoft.Resources/deployments', variables('nsgNames')[range(0, length(variables('nsgNames')))[copyIndex()]]), '2019-10-01').outputs.n.value]"
+        }
+      }
+    }
+  },
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.3.1.62928",
+      "templateHash": "11043703718792320070"
+    }
+  }
+}
