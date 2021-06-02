@@ -1,6 +1,6 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-TAG		?= 0.3.539
-BICEP_RELEASE	= v0.3.539
+TAG		?= 0.4.1
+BICEP_RELEASE	= v0.4.1
 
 help:	## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
@@ -24,4 +24,4 @@ login:	## login docker shell
 
 update-scripts:
 	cd tmp; rm -rf vscode-dev-containers; git clone --depth 1 git@github.com:microsoft/vscode-dev-containers.git; \
-	ls ../library-scripts/ | grep *.sh | xargs -I {} cp vscode-dev-containers/script-library/{} ../library-scripts/{}
+	ls ../library-scripts/ | grep '.sh$$' | xargs -I {} cp -v vscode-dev-containers/script-library/{} ../library-scripts/{}
