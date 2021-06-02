@@ -50,6 +50,8 @@ This definition requires an Azure subscription to use. You can create a [free ac
 
 ## ChangeLog
 
+- v0.4.1 linter MVP
+- v0.3.255 var loop support
 - v0.3.126 Improvements to child resource declarations, Loop enhancements
 - v0.3.1 bicep v0.3.1 loop support
 - v0.0.9 bicep v0.2.212  conditional resources support
