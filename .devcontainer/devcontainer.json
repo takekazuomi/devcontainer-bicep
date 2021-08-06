@@ -23,6 +23,8 @@
 		"dotjoshjohnson.xml",
 		"timonwong.shellcheck",
 		"editorconfig.editorconfig",
+    "ziyasal.vscode-open-in-github",
+    "msazurermtools.azurerm-vscode-tools",
 		//"/tmp/vscode-bicep.vsix"
 		"ms-azuretools.vscode-bicep"
 	],
