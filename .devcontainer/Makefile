@@ -1,6 +1,6 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-TAG		?= 0.4.1
-BICEP_RELEASE	= v0.4.1
+TAG		?= 0.4.451
+BICEP_RELEASE	= v0.4.451
 
 help:	## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
@@ -12,7 +12,8 @@ build:	## build
 		-f base.Dockerfile \
 		--build-arg BICEP_RELEASE=$(BICEP_RELEASE) \
 		.
-scan:	## build
+
+scan:	## scan
 	docker scan $(IMAGE_NAME):$(TAG)
 
 push:	## push
@@ -23,5 +24,5 @@ login:	## login docker shell
 	docker run -it --rm -u=$$(id -u):$$(id -g) -v $(PWD):/workspace $(IMAGE_NAME):latest /bin/zsh
 
 update-scripts:
-	cd tmp; rm -rf vscode-dev-containers; git clone --depth 1 git@github.com:microsoft/vscode-dev-containers.git; \
+	mkdir -p tmp; cd tmp; rm -rf vscode-dev-containers; git clone --depth 1 git@github.com:microsoft/vscode-dev-containers.git; \
 	ls ../library-scripts/ | grep '.sh$$' | xargs -I {} cp -v vscode-dev-containers/script-library/{} ../library-scripts/{}
