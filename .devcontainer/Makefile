@@ -1,6 +1,6 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-TAG		?= 0.4.451
-BICEP_RELEASE	= v0.4.451
+BICEP_RELEASE	= 0.4.613
+TAG		?= $(BICEP_RELEASE)
 
 help:	## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
@@ -10,7 +10,7 @@ build:	## build
 		-t $(IMAGE_NAME):$(TAG) \
 		-t $(IMAGE_NAME):latest \
 		-f base.Dockerfile \
-		--build-arg BICEP_RELEASE=$(BICEP_RELEASE) \
+		--build-arg BICEP_RELEASE=v$(BICEP_RELEASE) \
 		.
 
 scan:	## scan
