@@ -1,5 +1,5 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-BICEP_RELEASE	= 0.4.1008
+BICEP_RELEASE	= 0.4.1124
 TAG		?= $(BICEP_RELEASE)
 
 help:		## Show this help.

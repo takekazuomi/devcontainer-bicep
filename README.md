@@ -50,6 +50,7 @@ This definition requires an Azure subscription to use. You can create a [free ac
 
 ## ChangeLog
 
+- [v0.4.1124](https://github.com/Azure/bicep/releases/tag/v0.4.1124)
 - [v0.4.1008](https://github.com/Azure/bicep/releases/tag/v0.4.1008) Private Module registry, Implement TemplateSpec module references and more.
 - [v0.4.613](https://github.com/Azure/bicep/releases/tag/v0.4.613) Implement goto for resource and variable property accesses, module paths, params and outputs.
 - [v0.4.451](https://github.com/Azure/bicep/releases/tag/v0.4.451) Hotfix to remove the build summary.
