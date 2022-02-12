@@ -1,5 +1,5 @@
 IMAGE_NAME	?= takekazuomi/devcontainers-bicep
-BICEP_RELEASE	= 0.4.1124
+BICEP_RELEASE	= 0.4.1272
 TAG		?= $(BICEP_RELEASE)
 
 help:		## Show this help.
@@ -26,3 +26,9 @@ login:		## login docker shell
 update-scripts:	## update scripts
 	mkdir -p tmp; cd tmp; rm -rf vscode-dev-containers; git clone --depth 1 git@github.com:microsoft/vscode-dev-containers.git; \
 	ls ../library-scripts/ | grep '.sh$$' | xargs -I {} bash -c "([ -f vscode-dev-containers/script-library/{} ] && cp -v vscode-dev-containers/script-library/{} ../library-scripts/{}) || true"
+
+tag:
+	git tag -a v$(TAG)
+
+release:
+	gh release create v$(TAG) -d --generate-notes -t v$(TAG) --target main
